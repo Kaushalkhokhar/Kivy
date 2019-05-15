@@ -1,0 +1,79 @@
+#: import FadeTransition kivy.uix.screenmanager.FadeTransition
+
+ScreenManagement:    
+    LoginScreen:
+    WelcomeScreen:
+
+<LoginScreen>:
+    name: 'Login'
+    BoxLayout:
+        orientation: 'vertical'
+
+        Label:
+            text: 'Welcome to my app'
+            font_size: 50
+            size_hint_y: 1
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: [10,10,10,10]
+
+            Label:            
+                text: 'Usename'            
+                text_size: self.size
+                halign: 'left'
+                valign: 'middle'
+                
+                
+            TextInput:
+                id: username
+                size: [40, 40]
+                multiline: False            
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: [10,10,10,10]
+
+            Label:            
+                text: 'Password'
+                text_size: self.size
+                halign: 'left'
+                valign: 'middle'
+
+            TextInput:
+                id: password
+                size: [40,40]
+                multiline: False
+                password: True
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: [10,10,10,10]
+            size_hint_x: .3
+            size_hint_y: .3
+
+            Button:
+                id: login
+                text: 'Login'
+                font_size: 25
+                color: [1,0,0,1]
+                size: [50,50]
+                on_press: root.varify_password()
+
+<WelcomeScreen>:
+    name: 'Welcome'    
+    BoxLayout:
+        orientation: 'vertical'
+        
+        Label:
+            text: 'You have Log in Successfully'
+
+        Button:
+            id: Logout
+            text: 'Logout'
+            font_size: 25
+            color: [1,0,0,1]
+            size: [50,50]
+            on_press: root.logout()
+
+        
